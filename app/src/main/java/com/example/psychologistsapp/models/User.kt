@@ -1,7 +1,9 @@
 package com.example.psychologistsapp.models
 
+import java.io.Serializable
 
-class User {
+
+class User: Serializable {
     var id: Int = 0
     var name: String = ""
     var lastName : String = ""
@@ -27,6 +29,15 @@ class User {
     var patientNotes: ArrayList<Note> = arrayListOf()
     var appointmentsAsPsychologist: ArrayList<Appointment> = arrayListOf()
     var appointmentsAsPatient: ArrayList<Appointment> = arrayListOf()
+
+    constructor()
+    constructor(name: String, lastName: String, email: String, password: String, phoneNumber: String){
+        this.name = name
+        this.lastName = lastName
+        this.email = email
+        this.password = password
+        this.phoneNumber = phoneNumber
+    }
 
     fun addReview(review: Review){
         reviews.add(review)

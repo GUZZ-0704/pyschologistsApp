@@ -1,6 +1,8 @@
 package com.example.psychologistsapp.models
 
-class Review {
+import java.io.Serializable
+
+class Review : Serializable{
     var id: Int = 0
     var rating: Int = 0
     var comment: String = ""

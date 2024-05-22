@@ -1,6 +1,8 @@
 package com.example.psychologistsapp.models
 
-class Appointment {
+import java.io.Serializable
+
+class Appointment : Serializable {
     var id:Int = 0
     var date: String = ""
     var psychologist: User = User()
