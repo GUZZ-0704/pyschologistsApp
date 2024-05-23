@@ -20,7 +20,7 @@ class User: Serializable {
     var rating: Double = 0.0
     var profilePicture: Int = 0
     var fee : Double = 0.0
-    var qualifitcation : String = "" //Titulo
+    var qualification : String = "" //Titulo
     var mastersDegree : String = "" //Maestria
     var criminalRecord: String = ""
     var curriculum: String = ""
@@ -37,6 +37,18 @@ class User: Serializable {
         this.email = email
         this.password = password
         this.phoneNumber = phoneNumber
+    }
+
+    constructor(name: String, lastName: String, email: String, password: String, phoneNumber: String, isPsychologist: Boolean,qualification: String, profileImage: String){
+        this.name = name
+        this.lastName = lastName
+        this.email = email
+        this.password = password
+        this.phoneNumber = phoneNumber
+        this.isPsychologist = isPsychologist
+        this.qualification = qualification
+        this.profileImage = profileImage
+
     }
 
     fun addReview(review: Review){
@@ -73,6 +85,8 @@ class User: Serializable {
             }
         }
     }
+
+
 
 
 }

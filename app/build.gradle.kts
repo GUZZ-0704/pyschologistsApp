@@ -51,12 +51,12 @@ dependencies {
 
     val lifecycle_version = "2.7.0"
     val activity_version = "1.8.0"
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
-    implementation("androidx.activity:activity-ktx:$activity_version")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
 
-    implementation("androidx.viewpager2:viewpager2:1.0.0")
-    implementation("com.github.bumptech.glide:glide:4.12.0")
-    annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
-    implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation(libs.androidx.viewpager2)
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+    implementation(libs.androidx.recyclerview)
 }
