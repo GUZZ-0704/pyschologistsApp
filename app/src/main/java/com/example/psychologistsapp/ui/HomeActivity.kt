@@ -2,6 +2,7 @@ package com.example.psychologistsapp.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -10,10 +11,12 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.psychologistsapp.R
 import com.example.psychologistsapp.databinding.ActivityHomeBinding
+import com.example.psychologistsapp.models.Category
 import com.example.psychologistsapp.models.User
+import com.example.psychologistsapp.ui.adapters.CategoryAdapter
 import com.example.psychologistsapp.ui.adapters.PsychologistAdapter
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), CategoryAdapter.OnCategoryClickListener{
     private lateinit var binding: ActivityHomeBinding
     private val model: HomeViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +32,8 @@ class HomeActivity : AppCompatActivity() {
         model.loadPsychologists()
         setUpRecyclerView()
         setUpViewModelObservers()
+        setupCategoriesRecyclerView()
+        setupEventListeners()
     }
 
     private fun setUpViewModelObservers() {
@@ -41,13 +46,32 @@ class HomeActivity : AppCompatActivity() {
     private fun setUpRecyclerView() {
         val adapter = PsychologistAdapter(ArrayList(), object : PsychologistAdapter.OnPsychologistClickListener {
             override fun onPsychologistClick(user: User) {
-                /*val intent = Intent(this@HomeActivity, PsychologistDetailActivity::class.java)
-                intent.putExtra("psychologist", user)
-                startActivity(intent)*/
+
             }
         })
         binding.lstPsychologists.layoutManager = LinearLayoutManager(this)
         binding.lstPsychologists.adapter = adapter
 
+    }
+
+    private fun setupCategoriesRecyclerView() {
+        val adapter = CategoryAdapter(ArrayList(Category.entries), this)
+        binding.layoutFilter.bringToFront()
+        binding.lstCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        binding.lstCategories.adapter = adapter
+    }
+
+    private fun setupEventListeners() {
+        binding.imgFilter.setOnClickListener {
+            if (binding.layoutFilter.visibility == View.VISIBLE) {
+                binding.layoutFilter.visibility = View.GONE
+            } else {
+                binding.layoutFilter.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    override fun onCategoryClick(category: Category) {
+        TODO("Not yet implemented")
     }
 }

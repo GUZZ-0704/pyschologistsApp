@@ -29,12 +29,14 @@ class PsychologistAdapter (
     }
 
     override fun getItemCount(): Int {
-        return psychologistList.size
+        return psychologistList?.size?: 0
     }
 
     override fun onBindViewHolder(holder: PsychologistViewHolder, position: Int) {
-        val psychologist = psychologistList[position]
-        holder.bind(psychologist, listener)
+        val psychologist = psychologistList?.get(position)
+        if (psychologist != null) {
+            holder.bind(psychologist, listener)
+        }
     }
 
     class PsychologistViewHolder(itemView: ViewGroup) : RecyclerView.ViewHolder(itemView) {
@@ -55,4 +57,5 @@ class PsychologistAdapter (
     interface OnPsychologistClickListener {
         fun onPsychologistClick(user: User)
     }
+
 }

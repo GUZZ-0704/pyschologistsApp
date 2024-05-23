@@ -29,6 +29,7 @@ class User: Serializable {
     var patientNotes: ArrayList<Note> = arrayListOf()
     var appointmentsAsPsychologist: ArrayList<Appointment> = arrayListOf()
     var appointmentsAsPatient: ArrayList<Appointment> = arrayListOf()
+    var pyschologistSpecialties: ArrayList<Category> = arrayListOf()
 
     constructor()
     constructor(name: String, lastName: String, email: String, password: String, phoneNumber: String){
