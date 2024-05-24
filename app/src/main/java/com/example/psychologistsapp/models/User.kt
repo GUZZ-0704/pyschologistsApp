@@ -63,6 +63,30 @@ class User: Serializable {
         this.pyschologistSpecialties = pyscologistSpecialities
     }
 
+    constructor(
+        name: String,
+        lastName: String,
+        email: String,
+        password: String,
+        phoneNumber: String,
+        isPsychologist: Boolean,
+        qualification: String,
+        description: String,
+        profileImage: String
+
+    ) {
+        this.name = name
+        this.lastName = lastName
+        this.email = email
+        this.password = password
+        this.phoneNumber = phoneNumber
+        this.isPsychologist = isPsychologist
+        this.qualification = qualification
+        this.description = description
+        this.profileImage = profileImage
+    }
+
+
     fun addReview(review: Review){
         reviews.add(review)
         updateRating()

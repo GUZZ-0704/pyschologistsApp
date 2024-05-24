@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeActivity">
+    tools:context=".ui.AppointmentActivity">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -16,33 +16,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <SearchView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:orientation="horizontal">
-
-            <SearchView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                tools:srcCompat="@tools:sample/avatars" />
-
-        </LinearLayout>
-
+            android:layout_weight="5" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/lstPsychologists"
+            android:id="@+id/lstAppointments"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1">
 
+        </androidx.recyclerview.widget.RecyclerView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,25 +43,26 @@
                 android:text="Home" />
 
             <Button
-                android:id="@+id/btnMap_HomeActivity"
+                android:id="@+id/btnMap_AppointmentActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Mapa" />
 
             <Button
-                android:id="@+id/btnAppointment_HomeActivity"
+                android:id="@+id/btnAppoiment_AppointmentActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Citas" />
 
             <Button
-                android:id="@+id/btnProfile_HomeActivity"
+                android:id="@+id/btnProfile_AppointmentActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Perfil" />
         </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
