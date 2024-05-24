@@ -1,4 +1,4 @@
-package com.example.psychologistsapp.ui
+package com.example.psychologistsapp.ui.register
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

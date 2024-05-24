@@ -1,5 +1,6 @@
 package com.example.psychologistsapp.ui.adapters
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ class CategoryAdapter(
     private var categoryList: ArrayList<Category>,
     private val listener: CategoryAdapter.OnCategoryClickListener
 ): RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>(){
+    var selectedCategories = mutableListOf<Category>()
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -22,10 +24,14 @@ class CategoryAdapter(
         return CategoryViewHolder(binding.root)
     }
 
-    override fun onBindViewHolder(holder: CategoryAdapter.CategoryViewHolder, position: Int) {
-        val category = categoryList?.get(position)
-        if (category != null) {
-            holder.bind(category, listener)
+    override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
+        val category = categoryList[position]
+        holder.bind(category, listener)
+
+        if (selectedCategories.contains(category)) {
+            holder.itemView.setBackgroundColor(Color.LTGRAY) // Cambia esto al color que prefieras
+        } else {
+            holder.itemView.setBackgroundColor(Color.TRANSPARENT) // Cambia esto al color de fondo normal
         }
     }
 

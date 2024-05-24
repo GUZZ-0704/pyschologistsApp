@@ -7,14 +7,13 @@ import com.bumptech.glide.Glide
 import com.example.psychologistsapp.databinding.PshicologistListItemBinding
 import com.example.psychologistsapp.models.User
 
-class PsychologistAdapter (
-    private var psychologistList: ArrayList<User>,
+class PsychologistAdapter(
+    private var psychologistList: List<User>,
     private val listener: OnPsychologistClickListener
 
 ): RecyclerView.Adapter<PsychologistAdapter.PsychologistViewHolder>() {
     fun updatePsychologistList(newList: List<User>) {
-        psychologistList.clear()
-        psychologistList.addAll(newList)
+        psychologistList = newList
         notifyDataSetChanged()
     }
 

@@ -1,4 +1,4 @@
-package com.example.psychologistsapp.ui
+package com.example.psychologistsapp.ui.register
 
 import android.os.Bundle
 import android.widget.Toast

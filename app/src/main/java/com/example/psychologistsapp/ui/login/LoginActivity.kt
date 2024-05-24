@@ -1,4 +1,4 @@
-package com.example.psychologistsapp.ui
+package com.example.psychologistsapp.ui.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.psychologistsapp.R
 import com.example.psychologistsapp.databinding.ActivityLoginBinding
+import com.example.psychologistsapp.ui.home.HomeActivity
+import com.example.psychologistsapp.ui.register.RegisterActivity
 
 
 class LoginActivity : AppCompatActivity() {

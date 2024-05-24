@@ -32,7 +32,11 @@ class User: Serializable {
     var pyschologistSpecialties: ArrayList<Category> = arrayListOf()
 
     constructor()
-    constructor(name: String, lastName: String, email: String, password: String, phoneNumber: String){
+    constructor(name: String,
+                lastName: String,
+                email: String,
+                password: String,
+                phoneNumber: String){
         this.name = name
         this.lastName = lastName
         this.email = email
@@ -40,7 +44,14 @@ class User: Serializable {
         this.phoneNumber = phoneNumber
     }
 
-    constructor(name: String, lastName: String, email: String, password: String, phoneNumber: String, isPsychologist: Boolean,qualification: String, profileImage: String){
+    constructor(name: String,
+                lastName: String,
+                email: String, password: String,
+                phoneNumber: String,
+                isPsychologist: Boolean,
+                qualification: String,
+                profileImage: String,
+                pyscologistSpecialities: ArrayList<Category>){
         this.name = name
         this.lastName = lastName
         this.email = email
@@ -49,7 +60,7 @@ class User: Serializable {
         this.isPsychologist = isPsychologist
         this.qualification = qualification
         this.profileImage = profileImage
-
+        this.pyschologistSpecialties = pyscologistSpecialities
     }
 
     fun addReview(review: Review){

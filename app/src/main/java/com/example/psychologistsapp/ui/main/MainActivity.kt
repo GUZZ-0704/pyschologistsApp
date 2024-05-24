@@ -1,4 +1,4 @@
-package com.example.psychologistsapp.ui
+package com.example.psychologistsapp.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,8 +11,8 @@ import com.example.psychologistsapp.R
 import com.example.psychologistsapp.databinding.ActivityMainBinding
 import com.example.psychologistsapp.models.WelcomeMessage
 import com.example.psychologistsapp.models.WelcomeMessagesDB
+import com.example.psychologistsapp.ui.login.LoginActivity
 import com.example.psychologistsapp.ui.adapters.WelcomePagerAdapter
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {

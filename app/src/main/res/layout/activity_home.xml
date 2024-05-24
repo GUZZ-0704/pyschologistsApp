@@ -5,23 +5,24 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeActivity">
+    tools:context=".ui.home.HomeActivity">
 
     <LinearLayout
         android:id="@+id/layoutFilter"
         android:layout_width="300dp"
         android:layout_height="300dp"
+        android:layout_marginTop="65dp"
         android:background="#FFFFFF"
         android:orientation="vertical"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/txtFilter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Filtros" />
 
         <androidx.recyclerview.widget.RecyclerView
