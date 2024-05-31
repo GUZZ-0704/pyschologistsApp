@@ -1,4 +1,4 @@
-package com.example.psychologistsapp.ui
+package com.example.psychologistsapp.ui.psychologist
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.psychologistsapp.R
 import com.example.psychologistsapp.databinding.ActivityPsychologistDetailBinding
 import com.example.psychologistsapp.models.User
+import com.example.psychologistsapp.ui.appointment.MakeAnAppointmentActivity
 
 class PsychologistDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPsychologistDetailBinding
@@ -26,8 +27,6 @@ class PsychologistDetailActivity : AppCompatActivity() {
         val psychologist = intent.getSerializableExtra("psychologist") as User
         displayPsychologistDetails(psychologist)
         setupEventListeners()
-
-
     }
 
     private fun setupEventListeners() {

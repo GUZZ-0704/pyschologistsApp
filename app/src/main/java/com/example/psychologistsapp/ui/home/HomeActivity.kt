@@ -1,5 +1,6 @@
 package com.example.psychologistsapp.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -13,6 +14,7 @@ import com.example.psychologistsapp.databinding.ActivityHomeBinding
 import com.example.psychologistsapp.models.Category
 import com.example.psychologistsapp.models.User
 import com.example.psychologistsapp.models.UsersDB
+import com.example.psychologistsapp.ui.psychologist.PsychologistDetailActivity
 import com.example.psychologistsapp.ui.adapters.CategoryAdapter
 import com.example.psychologistsapp.ui.adapters.PsychologistAdapter
 
@@ -84,6 +86,8 @@ class HomeActivity : AppCompatActivity(), CategoryAdapter.OnCategoryClickListene
     }
 
     override fun onPsychologistClick(user: User) {
-        TODO("Not yet implemented")
+        val intent = Intent(this, PsychologistDetailActivity::class.java)
+        intent.putExtra("psychologist", user)
+        startActivity(intent)
     }
 }

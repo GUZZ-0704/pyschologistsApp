@@ -5,9 +5,35 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeActivity">
+    tools:context=".ui.home.HomeActivity">
 
     <LinearLayout
+        android:id="@+id/layoutFilter"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="65dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Filtros" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lstCategories"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
@@ -22,16 +48,18 @@
             android:layout_weight="5"
             android:orientation="horizontal">
 
+
             <SearchView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imgFilter"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="#FFFFFF"
                 tools:srcCompat="@tools:sample/avatars" />
 
         </LinearLayout>
@@ -51,28 +79,28 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnHome_HomeActivity"
+                android:id="@+id/btnHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Home" />
 
             <Button
-                android:id="@+id/btnMap_HomeActivity"
+                android:id="@+id/btnMap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Mapa" />
 
             <Button
-                android:id="@+id/btnAppointment_HomeActivity"
+                android:id="@+id/btnAppointment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Citas" />
+                android:text="Cita" />
 
             <Button
-                android:id="@+id/btnProfile_HomeActivity"
+                android:id="@+id/btnProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

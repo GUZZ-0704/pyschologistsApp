@@ -1,4 +1,4 @@
-package com.example.psychologistsapp.ui
+package com.example.psychologistsapp.ui.appointment
 
 import android.app.DatePickerDialog
 import android.os.Bundle

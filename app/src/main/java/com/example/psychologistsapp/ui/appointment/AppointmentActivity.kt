@@ -1,4 +1,4 @@
-package com.example.psychologistsapp.ui
+package com.example.psychologistsapp.ui.appointment
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

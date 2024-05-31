@@ -11,6 +11,7 @@ import com.example.psychologistsapp.R
 import com.example.psychologistsapp.databinding.ActivityMainBinding
 import com.example.psychologistsapp.models.WelcomeMessage
 import com.example.psychologistsapp.models.WelcomeMessagesDB
+import com.example.psychologistsapp.ui.MainViewModel
 import com.example.psychologistsapp.ui.login.LoginActivity
 import com.example.psychologistsapp.ui.adapters.WelcomePagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
