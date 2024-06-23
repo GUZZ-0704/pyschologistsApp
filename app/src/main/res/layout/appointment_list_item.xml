@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/lblAppointmentDate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lblNamePsycologist" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/lblAppointmentTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

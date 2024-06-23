@@ -17,10 +17,12 @@ import com.example.psychologistsapp.models.UsersDB
 import com.example.psychologistsapp.ui.psychologist.PsychologistDetailActivity
 import com.example.psychologistsapp.ui.adapters.CategoryAdapter
 import com.example.psychologistsapp.ui.adapters.PsychologistAdapter
+import com.example.psychologistsapp.ui.appointment.AppointmentActivity
 
 class HomeActivity : AppCompatActivity(), CategoryAdapter.OnCategoryClickListener, PsychologistAdapter.OnPsychologistClickListener{
     private lateinit var binding: ActivityHomeBinding
     private val model: HomeViewModel by viewModels()
+    private lateinit var user: User
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,6 +33,7 @@ class HomeActivity : AppCompatActivity(), CategoryAdapter.OnCategoryClickListene
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        user = intent.getSerializableExtra("user") as User
         setUpRecyclerView()
         setUpViewModelObservers()
         setupCategoriesRecyclerView()
@@ -70,6 +73,23 @@ class HomeActivity : AppCompatActivity(), CategoryAdapter.OnCategoryClickListene
             } else {
                 binding.layoutFilter.visibility = View.VISIBLE
             }
+        }
+        binding.btnHome.setOnClickListener {
+            binding.layoutFilter.visibility = View.GONE
+        }/*
+        binding.btnMap.setOnClickListener {
+            val intent = Intent(this, MapActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnProfile.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("user", user)
+            startActivity(intent)
+        }*/
+        binding.btnAppointment.setOnClickListener {
+            val intent = Intent(this, AppointmentActivity::class.java)
+            intent.putExtra("user", user)
+            startActivity(intent)
         }
     }
 

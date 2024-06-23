@@ -27,8 +27,7 @@ class User: Serializable {
     var idPhoto: String = ""
     var profileImage: String = ""
     var patientNotes: ArrayList<Note> = arrayListOf()
-    var appointmentsAsPsychologist: ArrayList<Appointment> = arrayListOf()
-    var appointmentsAsPatient: ArrayList<Appointment> = arrayListOf()
+    var appointments: ArrayList<Appointment> = arrayListOf()
     var pyschologistSpecialties: ArrayList<Category> = arrayListOf()
 
     constructor()
@@ -98,7 +97,7 @@ class User: Serializable {
     }
 
     fun updateRating(){
-        var sum = 0
+        var sum = 0.0
         for (review in reviews){
             sum += review.rating
         }
@@ -120,6 +119,23 @@ class User: Serializable {
                 break
             }
         }
+    }
+
+    fun addAppointment(appointment: Appointment){
+        appointments.add(appointment)
+    }
+
+    fun deleteAppointment(appointment: Appointment){
+        appointments.remove(appointment)
+    }
+
+
+    fun addSpecialty(category: Category){
+        pyschologistSpecialties.add(category)
+    }
+
+    fun deleteSpecialty(category: Category){
+        pyschologistSpecialties.remove(category)
     }
 
 

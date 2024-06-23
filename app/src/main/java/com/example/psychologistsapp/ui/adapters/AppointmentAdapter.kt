@@ -11,11 +11,11 @@ class AppointmentAdapter (
     private val listener: OnAppointmentClickListener
 
 ): RecyclerView.Adapter<AppointmentAdapter.AppointmentViewHolder>() {
-    /*fun updateAppointmentList(newList: List<Appointment>) {
+    fun updateAppointmentList(newList: ArrayList<Appointment>) {
         appointmentList.clear()
         appointmentList.addAll(newList)
         notifyDataSetChanged()
-    }*/
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppointmentViewHolder {
         val binding = AppointmentListItemBinding.inflate(
@@ -39,9 +39,13 @@ class AppointmentAdapter (
 
     class AppointmentViewHolder(itemView: ViewGroup) : RecyclerView.ViewHolder(itemView) {
         fun bind(appointment: Appointment, listener: OnAppointmentClickListener) {
-            /*val binding = AppointmentListItemBinding.bind(itemView)
-            binding.*/
-
+            val binding = AppointmentListItemBinding.bind(itemView)
+            binding.lblNamePsycologist.text = appointment.psychologist.name
+            binding.lblAppointmentDate.text = appointment.date
+            binding.lblAppointmentTime.text = appointment.time
+            binding.root.setOnClickListener {
+                listener.onAppointmentClick(appointment)
+            }
         }
     }
 
