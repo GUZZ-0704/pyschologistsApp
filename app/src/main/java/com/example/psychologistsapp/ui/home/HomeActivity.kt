@@ -18,6 +18,7 @@ import com.example.psychologistsapp.ui.psychologist.PsychologistDetailActivity
 import com.example.psychologistsapp.ui.adapters.CategoryAdapter
 import com.example.psychologistsapp.ui.adapters.PsychologistAdapter
 import com.example.psychologistsapp.ui.appointment.AppointmentActivity
+import com.example.psychologistsapp.ui.map.MapActivity
 
 class HomeActivity : AppCompatActivity(), CategoryAdapter.OnCategoryClickListener, PsychologistAdapter.OnPsychologistClickListener{
     private lateinit var binding: ActivityHomeBinding
@@ -74,13 +75,11 @@ class HomeActivity : AppCompatActivity(), CategoryAdapter.OnCategoryClickListene
                 binding.layoutFilter.visibility = View.VISIBLE
             }
         }
-        binding.btnHome.setOnClickListener {
-            binding.layoutFilter.visibility = View.GONE
-        }/*
+        binding.btnHome.isEnabled = false
         binding.btnMap.setOnClickListener {
             val intent = Intent(this, MapActivity::class.java)
             startActivity(intent)
-        }
+        }/*
         binding.btnProfile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             intent.putExtra("user", user)
@@ -108,6 +107,7 @@ class HomeActivity : AppCompatActivity(), CategoryAdapter.OnCategoryClickListene
     override fun onPsychologistClick(user: User) {
         val intent = Intent(this, PsychologistDetailActivity::class.java)
         intent.putExtra("psychologist", user)
+        intent.putExtra("user", this.user)
         startActivity(intent)
     }
 }

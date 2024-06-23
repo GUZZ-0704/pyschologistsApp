@@ -25,6 +25,7 @@ class PsychologistDetailActivity : AppCompatActivity() {
             insets
         }
         val psychologist = intent.getSerializableExtra("psychologist") as User
+        val user = intent.getSerializableExtra("user") as User
         displayPsychologistDetails(psychologist)
         setupEventListeners()
     }
@@ -32,6 +33,8 @@ class PsychologistDetailActivity : AppCompatActivity() {
     private fun setupEventListeners() {
         binding.btnMakeAnAppointment.setOnClickListener {
             val intent = Intent(this, MakeAnAppointmentActivity::class.java)
+            intent.putExtra("psychologist", intent.getSerializableExtra("psychologist"))
+            intent.putExtra("user", intent.getSerializableExtra("user"))
             startActivity(intent)
         }
     }

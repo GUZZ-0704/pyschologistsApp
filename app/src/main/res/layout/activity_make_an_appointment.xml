@@ -72,7 +72,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp"
-                android:paddingBottom="10dp">
+                android:paddingBottom="10dp"
+                tools:listitem="@layout/item_time_slot">
 
             </androidx.recyclerview.widget.RecyclerView>
 

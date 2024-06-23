@@ -14,14 +14,14 @@ class User: Serializable {
     var location: Location = Location()
     var isPsychologist: Boolean = false
     var age: Int = 0
-    var schedule: String = ""
+    var schedule: Pair<String, String> = Pair("","")
     var description: String = ""
     var reviews: MutableList<Review> = mutableListOf()
     var rating: Double = 0.0
     var profilePicture: Int = 0
     var fee : Double = 0.0
-    var qualification : String = "" //Titulo
-    var mastersDegree : String = "" //Maestria
+    var qualification : String = ""
+    var mastersDegree : String = ""
     var criminalRecord: String = ""
     var curriculum: String = ""
     var idPhoto: String = ""
