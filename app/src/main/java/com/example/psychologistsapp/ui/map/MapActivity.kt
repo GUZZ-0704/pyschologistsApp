@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 import com.example.psychologistsapp.R
 import com.example.psychologistsapp.databinding.ActivityAppointmentBinding
 import com.example.psychologistsapp.databinding.ActivityMapBinding
@@ -17,7 +18,7 @@ import com.example.psychologistsapp.ui.user.ProfileActivity
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 
-class MapActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapActivity : AppCompatActivity(){
     lateinit var binding: ActivityMapBinding
     private lateinit var user: User
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,8 +31,10 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.mapView2.onCreate(savedInstanceState)
-        binding.mapView2.getMapAsync(this)
+        user = intent.getSerializableExtra("user") as User
+        Glide.with(this)
+            .load(R.drawable.mapa)
+            .into(binding.imgMapa)
         setupEventListeners()
     }
 
@@ -55,32 +58,4 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
-    override fun onMapReady(p0: GoogleMap) {
-
-    }
-
-    override fun onResume() {
-        super.onResume()
-        binding.mapView2.onResume()
-    }
-
-    override fun onPause() {
-        binding.mapView2.onPause()
-        super.onPause()
-    }
-
-    override fun onDestroy() {
-        binding.mapView2.onDestroy()
-        super.onDestroy()
-    }
-
-    override fun onLowMemory() {
-        super.onLowMemory()
-        binding.mapView2.onLowMemory()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        binding.mapView2.onSaveInstanceState(outState)
-    }
 }

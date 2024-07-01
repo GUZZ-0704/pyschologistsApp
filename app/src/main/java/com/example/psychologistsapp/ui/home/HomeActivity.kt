@@ -79,6 +79,7 @@ class HomeActivity : AppCompatActivity(), CategoryAdapter.OnCategoryClickListene
         binding.btnHome.isEnabled = false
         binding.btnMap.setOnClickListener {
             val intent = Intent(this, MapActivity::class.java)
+            intent.putExtra("user", user)
             startActivity(intent)
         }
         binding.btnProfile.setOnClickListener {

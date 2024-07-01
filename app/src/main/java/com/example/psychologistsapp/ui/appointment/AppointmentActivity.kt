@@ -13,6 +13,7 @@ import com.example.psychologistsapp.databinding.ActivityAppointmentBinding
 import com.example.psychologistsapp.models.Appointment
 import com.example.psychologistsapp.models.User
 import com.example.psychologistsapp.ui.adapters.AppointmentAdapter
+import com.example.psychologistsapp.ui.home.HomeActivity
 import com.example.psychologistsapp.ui.map.MapActivity
 import com.example.psychologistsapp.ui.user.ProfileActivity
 
@@ -48,6 +49,9 @@ class AppointmentActivity : AppCompatActivity(), AppointmentAdapter.OnAppointmen
 
     private fun setupEventListeners() {
         binding.btnHomeHomeActivity.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("user", user)
+            startActivity(intent)
             finish()
         }
         binding.btnMapAppointmentActivity.setOnClickListener {
