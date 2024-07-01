@@ -52,15 +52,17 @@
             <SearchView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="#DEE1E0"
+                android:padding="10dp" />
 
             <ImageView
                 android:id="@+id/imgFilter"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:background="#D3D6D5"
+                app:srcCompat="@drawable/baseline_view_headline_24" />
 
         </LinearLayout>
 
@@ -69,13 +71,17 @@
             android:id="@+id/lstPsychologists"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="#D3D6D5"
+            android:backgroundTint="#D3D6D5" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="5"
+            android:background="#D3D6D5"
+            android:backgroundTint="#D3D6D5"
             android:orientation="horizontal">
 
             <Button
@@ -83,6 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#2A3F47"
                 android:text="Home" />
 
             <Button
@@ -90,6 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#2A3F47"
                 android:text="Mapa" />
 
             <Button
@@ -97,6 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#2A3F47"
                 android:text="Cita" />
 
             <Button
@@ -104,6 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#2A3F47"
                 android:text="Perfil" />
         </LinearLayout>
     </LinearLayout>
