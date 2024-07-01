@@ -15,6 +15,12 @@
         android:theme="@style/Theme.PsychologistsApp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.user.FullInformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.user.ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.payment.PaymentMethodActivity"
             android:exported="false" />
         <activity

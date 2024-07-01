@@ -14,6 +14,8 @@ import com.example.psychologistsapp.ui.appointment.MakeAnAppointmentActivity
 
 class PsychologistDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPsychologistDetailBinding
+    private lateinit var psychologist: User
+    private lateinit var user: User
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,8 +26,8 @@ class PsychologistDetailActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val psychologist = intent.getSerializableExtra("psychologist") as User
-        val user = intent.getSerializableExtra("user") as User
+        psychologist = intent.getSerializableExtra("psychologist") as User
+        user = intent.getSerializableExtra("user") as User
         displayPsychologistDetails(psychologist)
         setupEventListeners()
     }
@@ -33,8 +35,8 @@ class PsychologistDetailActivity : AppCompatActivity() {
     private fun setupEventListeners() {
         binding.btnMakeAnAppointment.setOnClickListener {
             val intent = Intent(this, MakeAnAppointmentActivity::class.java)
-            intent.putExtra("psychologist", intent.getSerializableExtra("psychologist"))
-            intent.putExtra("user", intent.getSerializableExtra("user"))
+            intent.putExtra("psychologist", psychologist)
+            intent.putExtra("user", user)
             startActivity(intent)
         }
     }
@@ -44,7 +46,7 @@ class PsychologistDetailActivity : AppCompatActivity() {
         binding.lblQualificationPsychologistDetailActivity.text = psychologist.qualification
         binding.lblDescriptionPsychologistDetailActivity.text = psychologist.description
         Glide.with(this)
-            .load(psychologist.profileImage)
+            .load(psychologist.profilePicture)
             .into(binding.imgProfilePsychologistDetailActivity)
     }
 }

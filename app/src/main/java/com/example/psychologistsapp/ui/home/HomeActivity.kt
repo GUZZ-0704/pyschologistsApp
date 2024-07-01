@@ -19,6 +19,7 @@ import com.example.psychologistsapp.ui.adapters.CategoryAdapter
 import com.example.psychologistsapp.ui.adapters.PsychologistAdapter
 import com.example.psychologistsapp.ui.appointment.AppointmentActivity
 import com.example.psychologistsapp.ui.map.MapActivity
+import com.example.psychologistsapp.ui.user.ProfileActivity
 
 class HomeActivity : AppCompatActivity(), CategoryAdapter.OnCategoryClickListener, PsychologistAdapter.OnPsychologistClickListener{
     private lateinit var binding: ActivityHomeBinding
@@ -79,12 +80,12 @@ class HomeActivity : AppCompatActivity(), CategoryAdapter.OnCategoryClickListene
         binding.btnMap.setOnClickListener {
             val intent = Intent(this, MapActivity::class.java)
             startActivity(intent)
-        }/*
+        }
         binding.btnProfile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             intent.putExtra("user", user)
             startActivity(intent)
-        }*/
+        }
         binding.btnAppointment.setOnClickListener {
             val intent = Intent(this, AppointmentActivity::class.java)
             intent.putExtra("user", user)
@@ -104,10 +105,10 @@ class HomeActivity : AppCompatActivity(), CategoryAdapter.OnCategoryClickListene
         adapter.notifyDataSetChanged()
     }
 
-    override fun onPsychologistClick(user: User) {
+    override fun onPsychologistClick(psychologist: User) {
         val intent = Intent(this, PsychologistDetailActivity::class.java)
-        intent.putExtra("psychologist", user)
-        intent.putExtra("user", this.user)
+        intent.putExtra("psychologist", psychologist)
+        intent.putExtra("user", user)
         startActivity(intent)
     }
 }
