@@ -43,18 +43,12 @@ class AppointmentAdapter (
             binding.lblNamePsycologist.text = appointment.psychologist.name
             binding.lblAppointmentDate.text = appointment.date
             binding.lblAppointmentTime.text = appointment.time
-            binding.root.setOnClickListener {
-                listener.onAppointmentClick(appointment)
-            }
         }
     }
 
     interface OnAppointmentClickListener {
         fun onAppointmentClick(appointment: Appointment)
     }
-
-
-
 }
 
 
