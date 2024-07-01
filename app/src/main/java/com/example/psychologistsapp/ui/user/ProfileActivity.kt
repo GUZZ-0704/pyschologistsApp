@@ -10,6 +10,7 @@ import com.example.psychologistsapp.R
 import com.example.psychologistsapp.databinding.ActivityProfileBinding
 import com.example.psychologistsapp.models.User
 import com.example.psychologistsapp.ui.appointment.AppointmentActivity
+import com.example.psychologistsapp.ui.home.HomeActivity
 import com.example.psychologistsapp.ui.login.LoginActivity
 import com.example.psychologistsapp.ui.map.MapActivity
 
@@ -40,6 +41,9 @@ class ProfileActivity : AppCompatActivity() {
         }
         binding.btnProfileProfileUserActivity.isEnabled = false
         binding.btnHomeProfileUserActivity.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("user", user)
+            startActivity(intent)
             finish()
         }
         binding.btnMapProfileUserActivity.setOnClickListener {
