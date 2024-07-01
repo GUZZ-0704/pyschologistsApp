@@ -22,7 +22,6 @@
             android:id="@+id/imgMapa"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
             android:layout_weight="1"
             android:scaleType="centerCrop"
             tools:srcCompat="@tools:sample/avatars" />
@@ -38,28 +37,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Home" />
+                android:backgroundTint="#2A3F47"
+                android:text="Home"
+                android:textColor="#FFFFFF"/>
 
             <Button
                 android:id="@+id/btnMap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Mapa" />
+                android:backgroundTint="#2A3F47"
+                android:text="Home"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btnAppointment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Cita" />
+                android:backgroundTint="#2A3F47"
+                android:text="Home"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btnProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Perfil" />
+                android:backgroundTint="#2A3F47"
+                android:text="Home"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

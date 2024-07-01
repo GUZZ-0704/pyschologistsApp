@@ -44,7 +44,6 @@ class PsychologistDetailActivity : AppCompatActivity() {
     private fun displayPsychologistDetails(psychologist: User) {
         binding.lblNamePsychologistDetailActivity.text = "${psychologist.name} ${psychologist.lastName}"
         binding.lblQualificationPsychologistDetailActivity.text = psychologist.qualification
-        binding.lblDescriptionPsychologistDetailActivity.text = psychologist.description
         Glide.with(this)
             .load(psychologist.profileImage)
             .into(binding.imgProfilePsychologistDetailActivity)
