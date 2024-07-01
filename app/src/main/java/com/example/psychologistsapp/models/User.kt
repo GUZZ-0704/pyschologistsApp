@@ -1,5 +1,6 @@
 package com.example.psychologistsapp.models
 
+import com.example.psychologistsapp.R
 import java.io.Serializable
 
 
@@ -18,7 +19,7 @@ class User: Serializable {
     var description: String = ""
     var reviews: MutableList<Review> = mutableListOf()
     var rating: Double = 0.0
-    var profilePicture: Int = 0
+    var profilePicture: Int = R.drawable.img
     var fee : Double = 0.0
     var qualification : String = ""
     var mastersDegree : String = ""
@@ -29,6 +30,7 @@ class User: Serializable {
     var patientNotes: ArrayList<Note> = arrayListOf()
     var appointments: ArrayList<Appointment> = arrayListOf()
     var pyschologistSpecialties: ArrayList<Category> = arrayListOf()
+
 
     constructor()
     constructor(name: String,

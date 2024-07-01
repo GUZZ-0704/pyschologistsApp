@@ -14,6 +14,7 @@ import com.example.psychologistsapp.models.Appointment
 import com.example.psychologistsapp.models.User
 import com.example.psychologistsapp.ui.adapters.AppointmentAdapter
 import com.example.psychologistsapp.ui.map.MapActivity
+import com.example.psychologistsapp.ui.user.ProfileActivity
 
 class AppointmentActivity : AppCompatActivity(), AppointmentAdapter.OnAppointmentClickListener{
     lateinit var binding: ActivityAppointmentBinding
@@ -56,12 +57,12 @@ class AppointmentActivity : AppCompatActivity(), AppointmentAdapter.OnAppointmen
             finish()
         }
         binding.btnAppoimentAppointmentActivity.isEnabled = false
-        /*
         binding.btnProfileAppointmentActivity.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("user", user)
             startActivity(intent)
             finish()
-        }*/
+        }
 
 
     }

@@ -13,6 +13,7 @@ import com.example.psychologistsapp.databinding.ActivityMapBinding
 import com.example.psychologistsapp.models.User
 import com.example.psychologistsapp.ui.appointment.AppointmentActivity
 import com.example.psychologistsapp.ui.appointment.AppointmentViewModel
+import com.example.psychologistsapp.ui.user.ProfileActivity
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 
@@ -45,12 +46,12 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         binding.btnMap.isEnabled = false
-        /*binding.btnProfile.setOnClickListener {
+        binding.btnProfile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             intent.putExtra("user", user)
             startActivity(intent)
             finish()
-        }*/
+        }
 
     }
 
