@@ -5,12 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D3D6D5"
+    android:backgroundTint="#D3D6D5"
     tools:context=".ui.main.MainActivity">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:backgroundTint="#D3D6D5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,13 +23,21 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:backgroundTint="#D3D6D5"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabIndicatorColor="#2A3F47"
+        app:tabRippleColor="#2A3F47"
+        app:tabTextColor="#02A3F47F">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
             android:text="Monday" />
 
         <com.google.android.material.tabs.TabItem
@@ -44,6 +55,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#D3D6D5"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,14 +67,18 @@
             android:id="@+id/btnFormer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:layout_weight="1"
+            android:backgroundTint="#2A3F47"
             android:text="Anterior" />
 
         <Button
             android:id="@+id/btnNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
+            android:backgroundTint="#2A3F47"
             android:text="Siguiente" />
     </LinearLayout>
 

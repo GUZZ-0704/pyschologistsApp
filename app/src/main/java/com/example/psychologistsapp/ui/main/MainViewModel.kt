@@ -21,8 +21,8 @@ class MainViewModel: ViewModel() {
 
 
     private fun setupWelcomeMessage(){
-        WelcomeMessagesDB.welcomeMessages.add(WelcomeMessage(1, R.drawable.prueba1))
-        WelcomeMessagesDB.welcomeMessages.add(WelcomeMessage(2, R.drawable.prueba2))
+        WelcomeMessagesDB.welcomeMessages.add(WelcomeMessage(1, R.drawable.prueba4))
+        WelcomeMessagesDB.welcomeMessages.add(WelcomeMessage(2, R.drawable.prueba3))
     }
 
     private fun setupUsers(){
